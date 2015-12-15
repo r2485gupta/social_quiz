@@ -1,0 +1,22 @@
+#navigation{
+	border-bottom: 5px solid #009688;
+}
+
+.site{
+	width: 600px;
+	height: 120px;
+	margin-left: 300px;
+	padding-left: 50px;
+	padding-top: 13px;
+	border-radius: 8px;
+	background-color: #cceae7;
+}
+
+.site-info{
+	width: 500px;
+	height: 30px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-left: 20px;
+}

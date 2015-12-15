@@ -1,0 +1,17 @@
+.login{
+      width: 780px;
+      height: 400px;
+      padding-left: 100px;
+      padding-top: 80px;
+      margin-left: 285px;
+      margin-top: 50px;
+      border-radius: 3px;
+      background-color: #cceae7;
+      border-bottom: 5px solid #99d5cf;
+      border-left: 5px solid #99d5cf;
+    }
+
+#vertical-line{
+      border-left: 3px solid #99d5cf;
+      height: 250px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <title>Social Quiz</title>
+  <!--<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- Form Starts -->
+<center><font color="#009688"><h2 style="font-weight: bold; font-size: 40px;">Registration</h2></font></center></br>
+<form method="post" action="." class="form-horizontal" style="width: 800px; margin-left: 285px; height: 800px; background-color: #cceae7; padding-top: 60px; border-radius: 5px;">
+  <div class="form-group" style="width: 500px; margin-left: 150px;">
+    <label for="id_username">Username</label>
+    {{ form.username }}
+  </div>
+  <div class="form-group" style="width: 500px; margin-left: 150px;">
+    <label for="id_email">Email</label>
+    {{ form.email }}
+  </div>
+  <div class="form-group" style="width: 500px; margin-left: 150px;">
+    <label for="id_password1">Password</label>
+    {{ form.password1 }}
+  </div>
+  <div class="form-group" style="width: 500px; margin-left: 150px;">
+    <label for="id_password2">Password(again)</label>
+    {{ form.password2 }}
+  </div>
+  <div class="form-group" style="width: 500px; margin-left: 150px;">
+    <label for="id_gender">Sex</label>
+    {{ form.gender }}
+  </div>
+  <div class="form-group" style="width: 500px; margin-left: 150px;">
+    <label for="id_dob">Date of Birth</label>
+    {{ form.dob }}
+  </div>
+  <div class="form-group" style="width: 500px; margin-left: 150px;">
+    <label for="id_state">State</label>
+    {{ form.state }}
+  </div>
+  <div class="form-group" style="width: 500px; margin-left: 150px;">
+    <label for="id_country">Country</label>
+    {{ form.country }}
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="agree" style="margin-top: 10px; margin-left: 132px;" id="check" checked><h6 style="margin-left: 160px;">By signing up you agree to our <a href="#">Terms & Conditions</a> and <a href="#"> Privacy Policy</a></h6></br>
+    </label>
+  </div>
+  <div class="form-group">
+    <center><button type="submit" class="btn btn-default" id="register"><font color="#32ab9f">Sign Up</font></button></center>
+  </div>
+</form></br></br></br>
+<!-- Form Ends -->
+
+<!--<script type='text/javascript'>
+        (function() {
+    $('form > input').keyup(function() {
+
+        var empty = false;
+        $('form > input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#register').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        } else {
+            $('#register').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        }
+    });
+})()
+</script>-->
+</body>
+</html>

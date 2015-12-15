@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <title>Social Quiz</title>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/sites_info.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!--Navbar Starts-->
+<nav class="navbar navbar-default navbar-static-top" id="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><font color="#009688">Social Quiz</font></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!--
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+    -->
+      
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default"><font color="#009688">Submit</font></button>
+      </form>
+      <li><a href="#"><i class="fa fa-newspaper-o fa-lg" style="color: #009688"></i>
+
+&nbsp Feeds <span class="sr-only">(current)</span></a></li>
+        <li><a href="#"><i class="fa fa-pencil-square-o fa-lg" style="color: #009688"></i>
+&nbsp Ask a Question</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#"><i class="fa fa-users fa-lg" style="color: #009688"></i>
+&nbsp <font color="#009688" id="nav-focus">Profile</font>
+</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs fa-lg" style="color: #009688"></i>
+ <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--Navbar Ends-->
+
+<font color="#009688"><h2 style="margin-left: 300px;">bookmarks</h2></font>
+
+<hr width="650px" style="border-top: 2px solid #66c0b7; border-radius: 10px; margin-left: 275px; margin-bottom: 40px;">
+
+{% for s in sites %}
+  <div class="site">
+    <h4 style="font-size: 22px;"><font color="#009688">{{ s.s_name }}</font></h4>
+
+    <div class="site-info">
+      <p><a href="{{ s.s_url }}">Visit {{ s.s_name }}</a></p>
+    </div>
+  </div></br>
+{% endfor %}
+
+<hr width="650px" style="border-top: 2px solid #66c0b7; border-radius: 10px; margin-left: 275px; margin-bottom: 40px;"></br>
+
+<font color="#009688"><h4 style="margin-left: 300px; font-size: 25px;">add a bookmark</h4></font></br>
+
+<!-- Form Starts -->
+<form method="post" action="." style="width: 600px; margin-left: 300px;">
+  <div class="form-group">
+    <label for="id_name">Site Name</label>
+    {{ form.s_name }}
+  </div>
+
+  <div class="form-group">
+    <label for="id_name">Site Name</label>
+    {{ form.s_url }}
+  </div>
+
+  <div class="form-group">
+    <center><button type="submit" class="btn btn-default"><font color="#32ab9f">Add</font></button></center>
+  </div>
+</form>
+<!-- Form Ends -->
+</body>
+</html>

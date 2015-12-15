@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <title>Social Quiz</title>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/books_info.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!--Navbar Starts-->
+<nav class="navbar navbar-default navbar-static-top" id="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><font color="#009688">Social Quiz</font></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!--
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+    -->
+      
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default"><font color="#009688">Submit</font></button>
+      </form>
+      <li><a href="#"><i class="fa fa-newspaper-o fa-lg" style="color: #009688"></i>
+
+&nbsp Feeds <span class="sr-only">(current)</span></a></li>
+        <li><a href="#"><i class="fa fa-pencil-square-o fa-lg" style="color: #009688"></i>
+&nbsp Ask a Question</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#"><i class="fa fa-users fa-lg" style="color: #009688"></i>
+&nbsp <font color="#009688" id="nav-focus">Profile</font>
+</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs fa-lg" style="color: #009688"></i>
+ <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--Navbar Ends-->
+
+<div class="row">
+<div class="col-md-3">
+    <div class="container">
+
+      <div class="profile-container unfold" id="fixed">
+        <div class="profile">
+          <div class="avatar"><img src="{% static 'img/default_profile.jpg' %}" width="150px" height="170px;" /></div><!-- 136 x 136 px using the follow button -->
+            <div class="follow"><button><i class="icon-plus"></i> Follow</button></div>
+        </div>
+       <!--  <ul class="profile-list">
+          <li class="first"><i class="icon-user"></i> Profile</li>
+          <li class="second"><i class="icon-list-alt"></i> Activity</li>
+          <li class="third"><i class="icon-time"></i> Timeline</li>
+          <li class="fourth"><i class="icon-heart"></i> Favorites</li>
+        </ul> -->
+      </div>
+    </div></br></br>
+    <div class="left-feeds">
+        </br></br></br><hr width="100px" style="border-top: 2px solid #bebebe; border-radius: 10px; margin-left: 0px;">
+        <h5 style="margin-left: 27px; font-weight: bold;">Feeds</h5>
+        <hr width="100px" style="border-top: 1px solid #d6d6d6; border-radius: 10px; margin-left: 0px;">
+        <ul>
+        <li><font color="009688"><a href="#" style="margin-left:17px;">All Activity</a></font></li>
+        <li><font color="009688"><a href="#" style="margin-left:17px;">Questions</a></font></li>
+        <li><font color="009688"><a href="#" style="margin-left:17px;">Answers</a></font></br></br></li>
+        <li><font color="66c0b7"><a href="#" style="margin-left:17px;">Followers</a></font></li>
+        <li><font color="66c0b7"><a href="#" style="margin-left:17px;">Following</a></font></li>
+    </div>
+</div>
+
+<div class="col-md-9">
+<font color="#009688"><h2 style="margin-left: 25px; font-weight: bold; margin-top: 40px; font-size: 35px;">books</h2></font>
+
+<hr width="650px" style="border-top: 2px solid #66c0b7; border-radius: 10px; margin-left: 0px; margin-bottom: 40px;">
+
+{% for b in books %}
+  <div class="books">
+    <div class="row">
+      <div class="col-md-1" style="margin-top: 12px;">
+        <font color="#009688"><i class="fa fa-arrow-right fa-lg"></i>
+</font>
+      </div>
+      <div class="col-md-6">  
+        <h4 style="font-size: 22px; font-color: #333333; font-weight: bold;">{{ b.b_name }}</h4>
+        <div class="books-info">
+          <p>by {{ b.author }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr width="450px" style="border-top: 2px solid #eeeeee; border-radius: 8px; margin-left: 25px; margin-bottom: 20px;">
+{% endfor %}
+
+<!-- <hr width="650px" style="border-top: 2px solid #66c0b7; border-radius: 10px; margin-left: 0px;"></br> -->
+</br>
+
+<div class="row">
+  <div class="col-md-1" style="margin-top: 17px; margin-left: 25px; width: 10px;">
+    <font color="#009688"><i class="fa fa-plus fa-lg"></i></font>
+  </div>
+  <div class="col-md-5">
+    <font color="#009688"><h4 style="font-size: 22px; font-weight: bold;">add a book</h4></font></br>
+  </div>
+</div>
+
+
+<!-- Form starts -->
+<form method="post" action="." style="margin-left: 25px; width: 600px;">
+  <div class="form-group">
+    <label for="id_name">Title</label>
+    {{ form.b_name }}
+  </div>
+
+  <div class="form-group">
+    <label for="id_author">Author</label>
+    {{ form.author }}
+  </div>
+
+  <div class-"form-group">
+    <center><button type="submit" class="btn btn-default"><font color="#32ab9f">Add</font></button></center>
+  </div>
+</form></br>
+<!-- Form ends -->
+</body>
+</html>
